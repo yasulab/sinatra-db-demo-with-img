@@ -1,1 +1,0 @@
-yohei@softbank221101189216.bbtec.net.3300
