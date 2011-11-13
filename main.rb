@@ -37,26 +37,29 @@ post '/upload' do
     File.open(save_path, 'wb') do |f|
       p params[:file][:tempfile]
       f.write params[:file][:tempfile].read
-      @mes = "Upload succeeded."
     end
     @image_path = "#{params[:file][:filename]}"
   else
-    @mes = "Upload failed."
     @image_path = "sample.jpg"
   end
+  
+  if params[:tweet]
+    @tweet = params[:tweet]
+  else
+    @tweet = ""
+  end
   post = Post.create(
-                     :title => "Hello world! via '/upload'.",
-                     :tweet_num => 0,
+                     :title => @tweet + " (via '/upload')",
+                     :tweet_num => @tweet.length,
                      :image_path => @image_path,
                      :created_at => Time.now
                      )
-  haml :upload
   redirect '/'
 end
 
 get '/create' do
   post = Post.create(
-                     :title => "Hello world via '/create'.",
+                     :title => "Hello world!" + " (via '/create')",
                      :tweet_num => 0,
                      :image_path => "sample.jpg",
                      :created_at => Time.now
