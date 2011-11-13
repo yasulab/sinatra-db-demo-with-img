@@ -23,10 +23,6 @@ end
 # Show records in the database
 get '/' do
   @posts = []
-  #Post.all.map { |r| 
-  #  @posts << "#{r.id}, #{r.tweet_num}, \
-  #             #{r.created_at}, #{r.title}, #{r.image_path}"
-  #}
 
   Post.all.map {  |r|
     @posts << r

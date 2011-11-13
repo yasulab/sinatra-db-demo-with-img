@@ -1,0 +1,7 @@
+This is a demo that
+- upload some data w/ image, and put them in local DB.
+- retrieve them from the db and show them via Haml.
+
+Author: @yasulab
+Contact: yasulab@gmail.com
+
