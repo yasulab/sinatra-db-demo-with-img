@@ -61,9 +61,9 @@ get '/create' do
   post = Post.create(
                      :title => "Hello world!" + " (via '/create')",
                      :tweet_num => 0,
-                     :image_path => "sample.jpg",
+                     :image_path => "res/no-image.jpg",
                      :created_at => Time.now
                      )
-  "Post.create was created!" unless post.nil? # If fail => nil ?
+  "Post.create was created!" unless post.nil?
 end
 
