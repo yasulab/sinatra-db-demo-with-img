@@ -5,7 +5,7 @@
       Tweet:
       %input{:type => "textarea", :name => "tweet"}  
       %input{:type => "file", :name => "file"}
-      %input{:type => "submit", :name => "submit"}
+      %input{:type => "submit", :name => "submit", :value => "tweet"}
       %br
       %br	
     %div
@@ -24,8 +24,8 @@
           %td #{post.tweet_num}
           %td #{post.created_at}
           %td
-            %a{:href => "images/#{post.image_path}"}
-              %img{:src => "images/#{post.image_path}",
+            %a{:href => "#{post.image_path}"}
+              %img{:src => "#{post.image_path}",
                    :alt => "No images",
                    :title => "Image",
                    :width => "50px",

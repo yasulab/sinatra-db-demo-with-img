@@ -38,9 +38,9 @@ post '/upload' do
       p params[:file][:tempfile]
       f.write params[:file][:tempfile].read
     end
-    @image_path = "#{params[:file][:filename]}"
+    @image_path = "images/#{params[:file][:filename]}"
   else
-    @image_path = "sample.jpg"
+    @image_path = "res/no-image.jpg"
   end
   
   if params[:tweet]

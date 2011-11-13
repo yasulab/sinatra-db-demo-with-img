@@ -1,3 +1,5 @@
 *~
 #*
 db*
+*.lock
+public/images/*
