@@ -1,0 +1,26 @@
+!!!html5
+%html
+ %body
+  %form{:action => "./upload", :method => "post", :enctype => "multipart/form-data"}
+   %input{:type => "file", :name => "file"}
+   %input{:type => "submit", :name => "submit"}
+  %br
+  %div
+   Records in the database:
+  %table{:border => "1"}
+   %tr
+    %th ID
+    %th Tweet Num
+    %th Created At
+    %th Title
+    %th Image
+   - @posts.each do |post|
+    %tr
+     %td #{post.id}
+     %td #{post.tweet_num}
+     %td #{post.created_at}
+     %td #{post.title}
+     %td
+      %img{:src => "images/#{post.image_path}", :alt => "No images", :title => "Image"}
+!!!      %img{:alt => "/images/sample.jpg", :src => "/images/sample.jpg"} 
+!!!      %img{:src => post.image_path}         
